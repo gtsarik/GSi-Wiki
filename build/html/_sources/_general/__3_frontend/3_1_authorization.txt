@@ -1,0 +1,10 @@
+**************
+Authorization
+**************
+
+Page for authorization when entering the GSi system. To enter two types of users used GSi system: *“Customer”* and *“Admin”*. For users is *“Admin”* access to all the site pages. For the user *“Customer”* only page *“Customer Section”*.
+
+   .. toctree::
+      :maxdepth: 4
+
+      _3_1_frontend/3_1_1_login.rst

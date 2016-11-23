@@ -1,0 +1,10 @@
+***********************************************************
+Login (`indy4.epcc.ed.ac.uk <http://indy4.epcc.ed.ac.uk>`_)
+***********************************************************
+
+To log in GSi system need a login and password that the user specify at registration.
+
+.. image:: ../../../_static/login/login_full.png
+   :height: 300px
+   :alt: login
+   :align: left

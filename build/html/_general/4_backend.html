@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>4. Backend &#8212; GSi 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="top" title="GSi 1.0 documentation" href="../index.html" />
+    <link rel="next" title="5. Model GSI" href="../_modules/gsi.html" />
+    <link rel="prev" title="3.3. Creating of Cards" href="_3_frontend/3_3_creating_of_cards.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../_modules/gsi.html" title="5. Model GSI"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="_3_frontend/3_3_creating_of_cards.html" title="3.3. Creating of Cards"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GSi 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="backend">
+<h1>4. Backend<a class="headerlink" href="#backend" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="project-on-the-server">
+<h2>4.1. Project on the server<a class="headerlink" href="#project-on-the-server" title="Permalink to this headline">¶</a></h2>
+<p>The path to the project on the server.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ /home/gsi/sites/gsi_website
+</pre></div>
+</div>
+</div>
+<div class="section" id="restart-the-server-from-the-local-computer">
+<h2>4.2. Restart the server from the local computer<a class="headerlink" href="#restart-the-server-from-the-local-computer" title="Permalink to this headline">¶</a></h2>
+<p>Source code the GSi project is in the repository. For the project management need to clone it to your local computer in the home folder:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd /home/[user]
+$ git clone https://github.com/gtsarik/GSI.git
+</pre></div>
+</div>
+<p>After cloning the project you want to add a new file fab_local.py:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ cd GSI
+$ touch fab_local.py
+</pre></div>
+</div>
+<p>Open the fab_local.py file:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ vim fab_local.py
+</pre></div>
+</div>
+<p>and add 3 variables in it:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ GSI_APP_SERVER = &#39;gsi@indy4.epcc.ed.ac.uk&#39;
+$ REMOTE_CODE_DIR = [remote root folder of the project]
+$ ENV_PASS = &#39;password to login on ssh&#39;
+</pre></div>
+</div>
+<p>The example for the REMOTE_CODE_DIR variable. The GSi project is along this path: /home/gsi/sites/gsi_website, so REMOTE_CODE_DIR = &#8216;sites/gsi_website&#8217;</p>
+<p>Save and close the file fab_local.py. Reboot the server:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ make restart
+</pre></div>
+</div>
+</div>
+<div class="section" id="restart-the-server-remotely">
+<h2>4.3. Restart the server remotely<a class="headerlink" href="#restart-the-server-remotely" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default"><div class="highlight"><pre><span></span>$ ssh gsi@indy4.epcc.ed.ac.uk
+$ [enter password]
+$ sudo service supervisor restart
+$ [enter password]
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">4. Backend</a><ul>
+<li><a class="reference internal" href="#project-on-the-server">4.1. Project on the server</a></li>
+<li><a class="reference internal" href="#restart-the-server-from-the-local-computer">4.2. Restart the server from the local computer</a></li>
+<li><a class="reference internal" href="#restart-the-server-remotely">4.3. Restart the server remotely</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="_3_frontend/3_3_creating_of_cards.html"
+                        title="previous chapter">3.3. Creating of Cards</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../_modules/gsi.html"
+                        title="next chapter">5. Model GSI</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/_general/4_backend.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="../_modules/gsi.html" title="5. Model GSI"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="_3_frontend/3_3_creating_of_cards.html" title="3.3. Creating of Cards"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">GSi 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, KeyUA.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+    </div>
+  </body>
+</html>

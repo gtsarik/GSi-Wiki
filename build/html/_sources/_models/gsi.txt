@@ -1,0 +1,15 @@
+******************************************
+CHAPTER 2 Module gsi
+******************************************
+
+Views
+======
+
+.. automodule:: gsi.views
+    :members:
+
+Models
+======
+
+.. automodule:: gsi.models
+    :members:

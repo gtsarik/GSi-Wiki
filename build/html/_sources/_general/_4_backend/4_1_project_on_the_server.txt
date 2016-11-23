@@ -1,0 +1,12 @@
+**************
+Backend
+**************
+
+Project on the server
+------------------------------
+
+In the menu *"Setup New Run"* select *"New Run"*.
+
+::
+
+/home/gsi/sites/gsi_website
